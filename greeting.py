@@ -3,6 +3,7 @@ from flask import request
 from flask import make_response
 import json
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ def hello():
 @app.route("/alexa_end_point", methods=['POST'])
 def alexa():
 	event = request.get_json()
-	print "Request: "
+	print "Request:"
 	print event
 	req = event['request']
 
