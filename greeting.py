@@ -14,8 +14,6 @@ def hello():
 @app.route("/alexa_end_point", methods=['POST'])
 def alexa():
 	event = request.get_json()
-	print ('Request:')
-	print (event)
 	req = event['request']
 
 
@@ -88,8 +86,6 @@ class Response(object):
 				}
 			}
 
-		print ("Response:")
-		print (fnl_response)
 		http_response = make_response(json.dumps(fnl_response))
 		http_response.headers['Content-Type'] = 'application/json'
 		return http_response 
@@ -99,5 +95,5 @@ class Response(object):
 if __name__ == '__main__':
 	#app.run()
 	port = int(os.getenv('PORT', 5000))
-    print "Starting app on port %d" % port
+    print ("Starting app on port %d" % port)
     app.run(debug=False, port=port, host='0.0.0.0')
