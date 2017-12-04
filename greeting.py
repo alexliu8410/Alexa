@@ -15,7 +15,7 @@ def hello():
 def alexa():
 	event = request.get_json()
 	print ('Request:')
-	print event
+	print (event)
 	req = event['request']
 
 
@@ -88,8 +88,8 @@ class Response(object):
 				}
 			}
 
-		print "Response:"
-		print fnl_response
+		print ("Response:")
+		print (fnl_response)
 		http_response = make_response(json.dumps(fnl_response))
 		http_response.headers['Content-Type'] = 'application/json'
 		return http_response 
