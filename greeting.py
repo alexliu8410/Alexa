@@ -14,7 +14,7 @@ def hello():
 @app.route("/alexa_end_point", methods=['POST'])
 def alexa():
 	event = request.get_json()
-	print 'Request:'
+	print ('Request:')
 	print event
 	req = event['request']
 
